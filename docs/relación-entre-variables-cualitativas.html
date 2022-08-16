@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.3 Relación entre variables cualitativas | Curso de Bioestadística</title>
+  <meta name="description" content="3.3 Relación entre variables cualitativas | Curso de Bioestadística" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.3 Relación entre variables cualitativas | Curso de Bioestadística" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.3 Relación entre variables cualitativas | Curso de Bioestadística" />
+  
+  
+  
+
+<meta name="author" content="Javier Manzano" />
+
+
+<meta name="date" content="2022-08-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="relación-entre-variable-numérica-y-cualitativa.html"/>
+<link rel="next" href="inferencia-estadística.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Curso de Bioestadística</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="prácticas-con-excel.html"><a href="prácticas-con-excel.html"><i class="fa fa-check"></i><b>1.1</b> Prácticas con Excel©</a></li>
+<li class="chapter" data-level="1.2" data-path="prácticas-con-rstudio.html"><a href="prácticas-con-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Prácticas con RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html"><i class="fa fa-check"></i><b>2</b> Análisis Exploratorio de Datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="conceptos-previos.html"><a href="conceptos-previos.html"><i class="fa fa-check"></i><b>2.1</b> Conceptos previos</a></li>
+<li class="chapter" data-level="2.2" data-path="tipos-de-variables.html"><a href="tipos-de-variables.html"><i class="fa fa-check"></i><b>2.2</b> Tipos de variables</a></li>
+<li class="chapter" data-level="2.3" data-path="tablas-de-frecuencias.html"><a href="tablas-de-frecuencias.html"><i class="fa fa-check"></i><b>2.3</b> Tablas de frecuencias</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="tablas-de-frecuencias.html"><a href="tablas-de-frecuencias.html#tabla-de-frecuencias-práctica-con-excel"><i class="fa fa-check"></i><b>2.3.1</b> Tabla de frecuencias (Práctica con Excel©)</a></li>
+<li class="chapter" data-level="2.3.2" data-path="tablas-de-frecuencias.html"><a href="tablas-de-frecuencias.html#tabla-de-frecuencias-práctica-con-r"><i class="fa fa-check"></i><b>2.3.2</b> Tabla de frecuencias (Práctica con R)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="tablas-de-frecuencias.html"><a href="tablas-de-frecuencias.html#tablas-de-frecuencias-práctica-2con-excel"><i class="fa fa-check"></i><b>2.3.3</b> Tablas de frecuencias (Práctica 2con Excel©)</a></li>
+<li class="chapter" data-level="2.3.4" data-path="tablas-de-frecuencias.html"><a href="tablas-de-frecuencias.html#tablas-de-frecuencias-práctica-3-con-excel"><i class="fa fa-check"></i><b>2.3.4</b> Tablas de frecuencias (Práctica 3 con Excel© )</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="números-índices.html"><a href="números-índices.html"><i class="fa fa-check"></i><b>2.4</b> Números índices</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="números-índices.html"><a href="números-índices.html#números-índices-práctica-con-excel"><i class="fa fa-check"></i><b>2.4.1</b> Números índices (Práctica con Excel©)</a></li>
+<li class="chapter" data-level="2.4.2" data-path="números-índices.html"><a href="números-índices.html#números-índices-práctica-con-r"><i class="fa fa-check"></i><b>2.4.2</b> Números índices (Práctica con R)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="representaciones-gráficas.html"><a href="representaciones-gráficas.html"><i class="fa fa-check"></i><b>2.5</b> Representaciones gráficas</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="representaciones-gráficas.html"><a href="representaciones-gráficas.html#introduccción"><i class="fa fa-check"></i><b>2.5.1</b> Introduccción</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="diagramas-de-barras-y-sectores.html"><a href="diagramas-de-barras-y-sectores.html"><i class="fa fa-check"></i><b>2.6</b> Diagramas de barras y sectores</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="diagramas-de-barras-y-sectores.html"><a href="diagramas-de-barras-y-sectores.html#diagramas-de-barras-y-sectores-práctica-con-excel"><i class="fa fa-check"></i><b>2.6.1</b> Diagramas de barras y sectores (Práctica con Excel©)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="histogramas.html"><a href="histogramas.html"><i class="fa fa-check"></i><b>2.7</b> Histogramas</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="histogramas.html"><a href="histogramas.html#histogramas-con-excel-prácticas"><i class="fa fa-check"></i><b>2.7.1</b> Histogramas con Excel© (Prácticas)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="otros-gráficos.html"><a href="otros-gráficos.html"><i class="fa fa-check"></i><b>2.8</b> Otros gráficos</a></li>
+<li class="chapter" data-level="2.9" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html"><i class="fa fa-check"></i><b>2.9</b> Medidas de posición, dispersión y forma</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-de-posición-centrales"><i class="fa fa-check"></i><b>2.9.1</b> Medidas de posición centrales</a></li>
+<li class="chapter" data-level="2.9.2" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-centrales-práctica"><i class="fa fa-check"></i><b>2.9.2</b> Medidas centrales (Práctica)</a></li>
+<li class="chapter" data-level="2.9.3" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-de-posición-no-centrales"><i class="fa fa-check"></i><b>2.9.3</b> Medidas de posición no centrales</a></li>
+<li class="chapter" data-level="2.9.4" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-no-centrales-práctica"><i class="fa fa-check"></i><b>2.9.4</b> Medidas no centrales (Práctica)</a></li>
+<li class="chapter" data-level="2.9.5" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-de-dispersión"><i class="fa fa-check"></i><b>2.9.5</b> Medidas de dispersión</a></li>
+<li class="chapter" data-level="2.9.6" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-de-dispersión-práctica"><i class="fa fa-check"></i><b>2.9.6</b> Medidas de dispersión (Práctica)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="normalización-de-datos.html"><a href="normalización-de-datos.html"><i class="fa fa-check"></i><b>2.10</b> Normalización de datos</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="normalización-de-datos.html"><a href="normalización-de-datos.html#normalización-de-datos-práctica"><i class="fa fa-check"></i><b>2.10.1</b> Normalización de datos (Práctica)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="medidas-de-forma.html"><a href="medidas-de-forma.html"><i class="fa fa-check"></i><b>2.11</b> Medidas de forma</a></li>
+<li class="chapter" data-level="2.12" data-path="análisis-de-datos-con-excel-práctica.html"><a href="análisis-de-datos-con-excel-práctica.html"><i class="fa fa-check"></i><b>2.12</b> Análisis de datos con Excel© (Práctica)</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="relación-entre-variables.html"><a href="relación-entre-variables.html"><i class="fa fa-check"></i><b>3</b> Relación entre variables</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html"><i class="fa fa-check"></i><b>3.1</b> Relación entre variables numéricas</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#diagramas-de-dispersión"><i class="fa fa-check"></i><b>3.1.1</b> Diagramas de dispersión</a></li>
+<li class="chapter" data-level="3.1.2" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#covarianza"><i class="fa fa-check"></i><b>3.1.2</b> Covarianza</a></li>
+<li class="chapter" data-level="3.1.3" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#coeficiente-de-correlación"><i class="fa fa-check"></i><b>3.1.3</b> Coeficiente de correlación</a></li>
+<li class="chapter" data-level="3.1.4" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#correlación-entre-2-variables-numéricas-práctica"><i class="fa fa-check"></i><b>3.1.4</b> Correlación entre 2 variables numéricas (Práctica)</a></li>
+<li class="chapter" data-level="3.1.5" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#regresión-lineal"><i class="fa fa-check"></i><b>3.1.5</b> Regresión lineal</a></li>
+<li class="chapter" data-level="3.1.6" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#regresión-práctica"><i class="fa fa-check"></i><b>3.1.6</b> Regresión (Práctica)</a></li>
+<li class="chapter" data-level="3.1.7" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#regresión-lineal-múltiple"><i class="fa fa-check"></i><b>3.1.7</b> Regresión lineal múltiple</a></li>
+<li class="chapter" data-level="3.1.8" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#regresión-múltiple-práctica"><i class="fa fa-check"></i><b>3.1.8</b> Regresión múltiple (Práctica)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="relación-entre-variable-numérica-y-cualitativa.html"><a href="relación-entre-variable-numérica-y-cualitativa.html"><i class="fa fa-check"></i><b>3.2</b> Relación entre variable numérica y cualitativa</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="relación-entre-variable-numérica-y-cualitativa.html"><a href="relación-entre-variable-numérica-y-cualitativa.html#relación-entre-variable-cualitativa-y-numérica-práctica"><i class="fa fa-check"></i><b>3.2.1</b> Relación entre variable cualitativa y numérica (Práctica)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html"><i class="fa fa-check"></i><b>3.3</b> Relación entre variables cualitativas</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#tablas-de-contingencia"><i class="fa fa-check"></i><b>3.3.1</b> Tablas de contingencia</a></li>
+<li class="chapter" data-level="3.3.2" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#diagrama-de-barras-agrupadas"><i class="fa fa-check"></i><b>3.3.2</b> Diagrama de barras agrupadas</a></li>
+<li class="chapter" data-level="3.3.3" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#gráficos-de-rectángulos-para-comparar-variables-cuantitativas"><i class="fa fa-check"></i><b>3.3.3</b> Gráficos de rectángulos para comparar variables cuantitativas</a></li>
+<li class="chapter" data-level="3.3.4" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#gráficos-o-diagramas-de-rectángulos-práctica"><i class="fa fa-check"></i><b>3.3.4</b> Gráficos o diagramas de rectángulos (Práctica)</a></li>
+<li class="chapter" data-level="3.3.5" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#diagnóstico-clínico"><i class="fa fa-check"></i><b>3.3.5</b> Diagnóstico clínico</a></li>
+<li class="chapter" data-level="3.3.6" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#curvas-roc-receiver-operating-characteristic-curve"><i class="fa fa-check"></i><b>3.3.6</b> Curvas ROC (Receiver Operating characteristic Curve)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="inferencia-estadística.html"><a href="inferencia-estadística.html"><i class="fa fa-check"></i><b>4</b> Inferencia Estadística</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="métodos-de-muestreo.html"><a href="métodos-de-muestreo.html"><i class="fa fa-check"></i><b>4.2</b> Métodos de muestreo</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Curso de Bioestadística</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="relación-entre-variables-cualitativas" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Relación entre variables cualitativas</h2>
+<p>Vamos a estudiar la relación entre variables cualitativas. Es lógico pensar que existe relación entre ambas variables cuando un cambio de categoría en una se asocia a un cambio de categoría en la otra y viceversa. Es relativamente sencillo expresar un carácter de forma cualitativa pero, desde un punto de vista estadístico, el tratamiento de las variables cualitativas es mucho más engorroso que el de las numéricas, en especial a la hora de estudiarlas conjuntamente.</p>
+<p>En este apartado estudiaremos las variables de forma descriptiva, es decir, mediante tablas, representaciónes gráficas y cálculo de los valores típicos. A diferencia del estudio de variables numéricas, la representación en forma de tabla de los datos tiene interés en nuestro caso porque, al tratarlos de manera categórica, se registrarán muchas repeticiones.</p>
+<div id="tablas-de-contingencia" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Tablas de contingencia</h3>
+<p>Para realizar una tabla de contigencia, tenemos una muestra de n individuos (u observaciones) sobre los que se evalúan simultáneamente dos variables cualitativas X e Y. Se construye una tabla con tantas columnas como valores tome X y tantas filas como valores tome Y en la distribución. Hallamos la frecuencia absoluta de cada par de valores de la variable (X,Y). Para ello, contamos el número de veces que se repite ese par de valores en la distribución y lo anotamos en la celda correspondiente. Esa es la <strong>frecuencia absoluta conjunta</strong>. Después, se añade una última fila y una última columna en la tabla que contiene las frecuencias absolutas de las variable X e Y por separado. Estas son las <strong>frecuencias marginales</strong>.</p>
+<p>Veamos un ejemplo; tenemos datos de 258 personas categorizadas por la variable colesterol, con tres grupos: bajo, medio y alto y la variable sexo, con dos grupos: hombre y mujer. La tabla de contingencia de los datos es:</p>
+<p><img src="img/3.3.1_tabla.png" width="473" /></p>
+<p>Así, tenemos 115 hombres con el colesterol bajo (frecuencia absoluta conjunta), 99 mujeres en total (frecuencia marginal) así como 52 individuos con el colesterol medio (frecuencia marginal).</p>
+<p>Una vez tabulados los datos, podemos calcular proporciones (porcentajes) de especial utilidad para estudios estadísticos de relación entre variables.</p>
+<p>Comenzamos con la <strong>proporción marginal</strong>, esto es, las frecuencias relativas correspondientes a las frecuencias marginales. Utilizamos la notación <span class="math inline">\(\widehat{P}\)</span> con un circunflejo para indicar que son proporciones obtenidas de una muestra. P se reserva para indicar una probabilidad referida a toda la población.</p>
+<p><span class="math inline">\(\widehat{P}(Bajo)=\frac{168}{258}=0.651\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Medio)=\frac{52}{258}=0.202\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Alto)=\frac{38}{258}=0.147\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Hombre)=\frac{159}{258}=0.616\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Mujer)=\frac{99}{258}=0.384\)</span></p>
+<p>ˆ
+Vamos con las <strong>proporciones condicionadas</strong>. Con <span class="math inline">\(\widehat{P}(Hombre/Medio)\)</span> entendemos la
+proporción de individuos que, con nivel de colesterol medio, son hombres. Sin embargo, <span class="math inline">\(\widehat{P}(Alto/M ujer)\)</span> sería la proporción de individuos que, siendo mujeres, tendrían el colesterol alto.</p>
+<p>Así calculamos por filas:</p>
+<p><span class="math inline">\(\widehat{P}(Bajo/Hombre)=\frac{115}{159}=0.723\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Medio/Hombre)=\frac{23}{159}=0.145\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Alto/Hombre)=\frac{21}{159}=0.132\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Bajo/Mujer)=\frac{53}{99}=0.535\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Medio/Mujer)=\frac{29}{99}=0.293\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Alto/Mujer)=\frac{17}{99}=0.172\)</span></p>
+<p>Y por columnas:</p>
+<p><span class="math inline">\(\widehat{P}(Hombre/Bajo)=\frac{115}{168}=0.685\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Hombre/Medio)=\frac{23}{52}=0.442\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Hombre/Alto)=\frac{21}{38}=0.553\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Mujer/Bajo)=\frac{53}{168}=0.315\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Mujer/Medio)=\frac{29}{52}=0.558\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Mujer/Alto)=\frac{17}{38}=0.447\)</span></p>
+<p>Por último, las <strong>proporciones conjuntas</strong> indican la proporción de individuos que cumplen 2 características de las variables. Por ejemplo, P(Mujer y Bajo) = P(Mujer <span class="math inline">\(\cap\)</span> Bajo) indica la proporción de individuos que son mujeres y tienen el colesterol bajo.</p>
+<p><span class="math inline">\(\widehat{P}(Bajo \cap Hombre)=\frac{115}{258}=0.446\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Medio \cap Hombre)=\frac{23}{258}=0.089\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Alto \cap Hombre)=\frac{21}{258}=0.081\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Bajo \cap Mujer)=\frac{53}{258}=0.205\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Medio \cap Mujer)=\frac{29}{258}=0.112\)</span></p>
+<p><span class="math inline">\(\widehat{P}(Alto \cap Mujer)=\frac{17}{258}=0.066\)</span></p>
+<p>Una propiedad de estas proporciones se deriva del concepto de probabilidad condicionada. Establece que:</p>
+<p><span class="math inline">\(\widehat{P}(A \cap B)=\widehat{P}(A) \cdot \widehat{P}(B/A)\)</span></p>
+<p>Por ejemplo, según este resultado:</p>
+<p><span class="math inline">\(\widehat{P}(Bajo \cap Hombre)=\widehat{P}(Bajo) \cdot \widehat{P}(Hombre/Bajo)\)</span></p>
+<p>Vamos a comprobarlo con las proporciones obtenidas anteriormente:</p>
+<p><span class="math inline">\(\left. \begin{array}{r} \hat{P}(Bajo \cap Hombre)=0,446 \\ \hat{P}(Bajo)=0,651 \\ \hat{P}(Hombre/Bajo)=0,685 \end{array} \right\} \Rightarrow 0,446=0,651\cdot 0,685\)</span></p>
+</div>
+<div id="diagrama-de-barras-agrupadas" class="section level3" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Diagrama de barras agrupadas</h3>
+<p>Otra forma de comparar variables cuantitativas es mediante el uso de diagramas de barras agrupadas. En nuestro ejemplo, podemos agrupar los datos en función del nivel de colesterol:</p>
+<p><img src="img/3.3.2_barras.png" width="605" /></p>
+<p>o en función del sexo:</p>
+<p><img src="img/3.3.2_barras2.png" width="606" /></p>
+<p>Estos diagramas nos proporcionan una información visual sobre los posibles cambios en las proporciones tanto por filas como por columnas.
+En términos estadísticos, entendemos que la correlación a nivel muestral entre las dos variables cualitativas observadas es más fuerte cuanto mayores sean las diferencias entre las proporciones condicionadas al pasar de una categoría a otra.</p>
+</div>
+<div id="gráficos-de-rectángulos-para-comparar-variables-cuantitativas" class="section level3" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Gráficos de rectángulos para comparar variables cuantitativas</h3>
+<p>Para medir intuitivamente el grado de correlación entre variables cuantitativas, vamos a utilizar un tipo de gráfico, el de rectángulos.</p>
+<p>Seguimos con nuestro ejemplo:</p>
+<p><img src="img/3.3.1_tabla.png" width="473" /></p>
+<p>Una forma muy interesante de visualizar esos datos es mediante diagramas de rectángulos en los que el área de cada rectángulo es proporcional a cada frecuencia. Así, el diagrama de rectángulos de la tabla anterior es el siguiente:</p>
+<p><img src="img/3.3.3_rect.png" width="601" /></p>
+<p>Para comprobar si las variables estudiadas (nivel colesterol y sexo en nuestro ejemplo) son independientes, podemos compararlas con los ​datos teóricos o esperados que tendríamos si hay independencia entre variables.</p>
+<p>Para calcular dichos datos esperados en caso de independencia entre variables, partimos de un resultado de teoría de probabilidades: “si 2 sucesos son independientes la probabilidad de que ocurran a la vez es el producto de la probabilidad de que ocurra uno por la probabilidad de que ocurra otro”. En notación matemática:</p>
+<p><span class="math inline">\(P(A \cap B)= P(A) \cdot P(B)\)</span></p>
+<p>Esto lo podemos ver de una forma sencilla con el lanzamiento de dos monedas. Los resultados son independientes ya que el resultado de lanzar una moneda (cara o cruz) no influye en el resultado obtenido al lanzar la otra moneda. Así, la probabilidad de obtener 2 caras es el producto de obtener cara en una moneda (0.5) multiplicado por la probabilidad de obtener cara con la otra moneda (0.5). Así P(2 caras) = 0.5 · 0.5 = 0.25.</p>
+<p>De este modo, si partimos de la tabla con las frecuencias marginales de nuestro conjunto de datos:</p>
+<p><img src="img/3.3.3_frec_marg.png" width="443" /></p>
+<p>vamos a calcular los valores esperados en caso de independencia de variables, es decir, vamos a completar esa tabla con los valores que se supone que debería haber en caso de que las 2 variables (sexo y nivel de colesterol) sean independientes.</p>
+<p>Empezamos con el valor esperado para hombres con nivel de colesterol bajo. Si la proporción esperada es P(Hombre <span class="math inline">\(\cap\)</span> Bajo ), el número de individuos esperado será 258·P(Hombre <span class="math inline">\(\cap\)</span>Bajo).</p>
+<p>Por ejemplo, si tenemos 200 individuos y la probabilidad de ser rubio es 0.36, el número esperado de individuos rubios será 200·0.36 = 72.</p>
+<p>Volviendo a nuestro ejemplo, para calcular los individuos esperados y suponiendo que las variables son independientes, aplicamos el resultado de probabilidad que hemos comentado:</p>
+<p><span class="math inline">\(\widehat{P}(Hombre \cap Bajo)=\widehat{P}(Hombre) \cdot \widehat{P}(Bajo)\)</span></p>
+<p>Como <span class="math inline">\(\widehat{P}(Hombre)=\frac{159}{258}\)</span> y <span class="math inline">\(\widehat{P}(Bajo)=\frac{168}{258}\)</span>, el número esperado de hombres con el colesterol bajo es:</p>
+<p><span class="math inline">\(258 \cdot \widehat{P}(Hombre \cap Bajo) = 258 \cdot \widehat{P}(Hombre) \cdot \widehat{P}(Bajo)\)</span></p>
+<p><span class="math inline">\(258 \cdot \widehat{P}(Hombre \cap Bajo) = 258 \cdot \frac{159}{258} \cdot \frac{168}{258} = \frac{159 \cdot 168}{258}=103.5\)</span></p>
+<p>En el resultado final, al ser individuos, no tiene sentido usar decimales pero dejamos uno para tener más exactitud en cálculos posteriores. De esto modo, vemos que, para obtener el número de individuos esperado no hay más que multiplicar las frecuencias marginales y dividir el resultado por el número total de individuos:</p>
+<p><img src="img/3.3.3_valores_esp.png" width="503" /></p>
+<p>De este modo, podemos obtener de una forma muy sencilla la tabla de contingencia de datos teóricos suponiendo que las variables son independientes a partir de las frecuencias marginales de nuestra muestra:</p>
+<p><img src="img/3.3.3_tabla2.png" width="602" /></p>
+<p>así como el diagrama de rectángulos correspondiente:</p>
+<p><img src="img/3.3.3_diag_rect2.png" width="593" /></p>
+<p>Comparando los 2 gráficos de rectángulos obtenidos (datos observado y teóricos), parece que se ajustan bien, es decir, que con los valores observados, podemos deducir intuitivamente que las variables son independientes y que no hay relación entre ellas.</p>
+<p><img src="img/3.3.3_rect.png" width="50%" /><img src="img/3.3.3_diag_rect2.png" width="50%" /></p>
+</div>
+<div id="gráficos-o-diagramas-de-rectángulos-práctica" class="section level3" number="3.3.4">
+<h3><span class="header-section-number">3.3.4</span> Gráficos o diagramas de rectángulos (Práctica)</h3>
+<p>Para realizar esta práctica, debe tener descargado en su ordenador el archivo <a href="https://github.com/1fjmanzano/bioestadistica/blob/master/2.practicas.xlsx">2.practicas.xlsx</a> y abrir la hoja/pestaña correspondiente.</p>
+<p>En el siguente vídeo se muestran los pasos para realizar la práctica.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_gxvpd_N8LE" frameborder="0" allow="accelerometer; autoplay; encrypted-media;
+  gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<div id="diagnóstico-clínico" class="section level3" number="3.3.5">
+<h3><span class="header-section-number">3.3.5</span> Diagnóstico clínico</h3>
+<p>Una cuestión de gran interés en Medicina es el estudio de la eficacia de los diferentes procedimientos de diagnóstico que guarda una estrecha relación con las tablas de contingencia 2 x 2. Cabe destacar que una gran cantidad de procedimientos de diagnóstico tienen una importante componente estadística
+.
+Partimos de métodos que consisten en medir una variable de tipo numérico (analítica, ecografía, TAC, etc.) en el caso de conocer la distribución (proporción) aproximada para los individuos sanos de una variable concreta, es decir, qué valores puede tomar y en qué proporciones. De este modo, un <strong>valor anómalo</strong> respecto a dicha distribución puede ser considerado en principio patológico. Ya vimos que se puede considerar anómal un valor que está a más de 3 desviaciones típicas de la media, utilizando la desigualdad de Chevyshev donde en el intervalos <span class="math inline">\((\overline{x}-3\sigma, (\overline{x}+3\sigma)\)</span> están, al menos, el 88% de los datos.</p>
+<p>Sin embargo, un valor dentro de los límites correspondientes a la población sana supondrá un resultado en el diagnóstico negativo, lo cual no tiene por qué excluir la posibilidad de que el individuo esté enfermo.</p>
+<p>Consideremos la elección de una prueba o investigación médica. Tenemos que ser conscientes del hecho de que las pruebas no son completamente precisas. Se producen falsos resultados positivos y negativos. Al confrontar la enfermedad con el resultado del diagnóstico se pueden dar las situaciones presentes en esta tabla</p>
+<p><img src="img/3.3.5_tabla.png" width="598" /></p>
+<p>Así, puede ocurrir que un individuo sano sea diagnosticado erróneamente como enfermo (positivo), lo cual se denomina <strong>falso positivo</strong>. También es posible que un individuo enfermo sea diagnosticado como sano (negativo), lo cual sería un ** falso negativo**.</p>
+<p>Ppara estudiar la fiabilidad de un procedimiento de diagnóstico, vamos a considerar unos datos ficticios dispuestos en una tabla 2 x 2 donde se relacionan la enfermedad (sano, enfermo) con el resultado del diagnóstico (positivo, negativo):</p>
+<p><img src="img/3.3.5_tabla2.png" width="596" /></p>
+<p>En cualquier estudio interesa que los verdaderos positivos y negativos sean alcancen los máximos valores posibles. Para cuantificar estos resultados verdaderos, se definen las siguientes medidas:</p>
+<ul>
+<li><p><strong>Sensibilidad</strong>: es la proporción de enfermos que son diagnosticados como positivos (proporción de verdaderos positivos).</p></li>
+<li><p><strong>Especificidad</strong>: es la proporción de sanos diagnosticados como negativos (proporción de verdaderos negativos).</p></li>
+</ul>
+<p>De este modo, en nuestro ejemplo:</p>
+<p>Sensibilidad = <span class="math inline">\(\widehat{P}(+/E)=\frac{90}{100}=0.90\)</span></p>
+<p>Especificidad = <span class="math inline">\(\widehat{P}(-/S)=\frac{810}{900}=0.90\)</span></p>
+<p>Tenemos una sensibilidad del 90% y una especificidad también del 90%. Parecen buenos resultados pero vamos a obtener otros valores, los <strong>valores predictivos</strong>, que nos van a indicar la fiabilidad de los diagnóstico.</p>
+<p>El <strong>valor predictivo positivo</strong> (VPP) es la probabilidad de que la enfermedad esté presente cuando la prueba es positiva. Para calcularlo, se divide el número de verdaderos positivos entre el número total de positivos, es decir:</p>
+<p><span class="math inline">\(VPP=\frac{Verdaderos ~ positivos}{Total ~ positivos}=\frac{Verdaderos ~ positivos}{Verdaderos ~ positivos ~ + ~ Falsos ~ positivos}\)</span></p>
+<p>El <strong>valor predictivo negativo</strong> (VPN) es la probabilidad de que la enfermedad no esté presente cuando la prueba es negativa. Para calcularlo, se divide el número de verdaderos negativos entre el número total de negativos, es decir:</p>
+<p><span class="math inline">\(VPN=\frac{Verdaderos ~ negativos}{Total ~ negativos}=\frac{Verdaderos ~ negativos}{Verdaderos ~ negativos ~ + ~ Falsos ~ negativos}\)</span></p>
+<p>Volviendo a nuestro ejemplo:</p>
+<p><img src="img/3.3.5_tabla2.png" width="596" /></p>
+<p>Tenemos que los valores predictivos son:</p>
+<p><span class="math inline">\(VPP=\frac{90}{180}=0.50\)</span></p>
+<p><span class="math inline">\(VPN=\frac{810}{820}=0.99\)</span></p>
+<p>De este modo, tenemos un valor predictivo positivo del 50% (solo la mitad de los pacientes con un resultado positivo realmente tendrá la enfermedad) y un valor predictivo negativo del 99%, lo que significa que solo casi todos los pacientes con un resultado negativo en realidad no tendrán la enfermedad.</p>
+<p>Los valores predictivos dependen mucho de la prevalencia de una enfermedad. En nuestro ejemplo, teníamos una muestra de 1000 pacientes en los que la enfermedad existe en solo el 10%. Es esta baja prevalencia la que nos da el pobre valor predictivo positivo. Al interpretar valores predictivos positivos y negativos, siempre debe comparar la prevalencia de la enfermedad en la muestra del estudio frente a la prevalencia de la enfermedad en la población de pacientes.</p>
+</div>
+<div id="curvas-roc-receiver-operating-characteristic-curve" class="section level3" number="3.3.6">
+<h3><span class="header-section-number">3.3.6</span> Curvas ROC (Receiver Operating characteristic Curve)</h3>
+<p>Vamos a presentar un tipo de gráfico que relaciona de la sensibilidad de un test de diagnóstico y el complementario de la especificidad en función del punto de corte que indica que un test es positivo. Son las conocidas como <strong>curvas características</strong> o <strong>curvas ROC</strong>. A menudo se usan para elegir entre varios test aunque el procedimiento no tiene en cuenta la prevalencia de la enfermedad que se estudia.</p>
+<p>Vamos a utilizar un ejemplo real tomado del artículo <a href="https://pubmed.ncbi.nlm.nih.gov/20661665/">Body mass index and waist circumference are predictor biomarkers of breast cancer risk in Iranian women</a> en el que se obtienen datos respecto al punto de corte del Índice de Masa Corporal (BMI Body Mass Index) para la detección del cáncer de mama. Los datos están en la siguiente tabla:</p>
+<p><img src="img/3.3.6_tabla.png" width="599" /></p>
+<p>Tenemos entonces valores de la sensibilidad y la especificidad para distintos puntos de corte. Si representamos su variación:</p>
+<p><img src="img/3.3.6_graph.png" width="402" /></p>
+<p>vemos que cuando al aumentar el punto de corte (criterio), aumenta la especificidad (proporción de verdaderos negativos) y disminuye la sensibilidad (proporción de verdaderos positivos).</p>
+<p>Para ver si el biomarcador del Índice de Masa Corporal tiene capacidad predictiva para discriminar el cáncer de mama de los sujetos normales, vamos a construir la curva ROC e interpretarla. Para ello, calculamos los siguientes valores:</p>
+<ul>
+<li><p>La <strong>proporción de verdaderos positivos</strong> (TPR: True Positive Rate): cociente entre los verdaderos positivos y la suma de los verdaderos positivos y los falsos negativos. Coincide con la sensibilidad.</p></li>
+<li><p>La <strong>proporción de falsos positivo s</strong> (FPR: False Positive Rate): cociente entre los verdaderos positivos y la suma de los falsos positivos y los verdaderos negativos. Es el complementario de la especificidad (1 - especificidad).</p></li>
+</ul>
+<p>Un ejemplo de curva ROC asociada a un clasificador para el diagnóstico clínico es:</p>
+<p><img src="img/3.3.6_roc.png" width="585" /></p>
+<p>donde se ha representado la curva que relaciona la proporción de falsos positivos y la proporción de verdaderos positivos.</p>
+<p>Para entender el significado de esta curva, vamos a presentar algunos ejemplos “precocinados” que muestran situaciones extremas.</p>
+<ul>
+<li><p>Adivinando: el primer ejemplo es el más simple: una línea diagonal. Una línea diagonal indica que el clasificador solo está haciendo conjeturas completamente al azar. Dado que este clasificador sólo será correcto el 50% del tiempo, es lógico que su TPR y FPR también sean iguales. Esta línea diagonal se suele mostrar en todas las curvas ROC.</p></li>
+<li><p>Clasificador perfecto: hace que cada predicción sea correcta. En este caso se tiene una compensación perfecta entre TPR y FPR lo que significa que hay un 100% de verdaderos positivos (TPR = 1) y un 0% de falsos positivos (FPR = 0).</p></li>
+</ul>
+<p><img src="img/3.3.6_roc2.png" width="608" /></p>
+<ul>
+<li><p>Peor que adivinar: un mal clasificador (es decir, algo que es peor que adivinar) aparecerá por debajo de la línea diagonal. Si esto aparece, mal negocio.</p></li>
+<li><p>Mejor que adivinar: por el contrario, un buen clasificador supone que la curva esté por encima de la diagonal. Cuanto más se acerque al clasificador perfecto, mejor. En la imagen, la curva ROC corresponde a un clasificador no muy bueno.</p></li>
+</ul>
+<p><img src="img/3.3.6_roc3.png" width="612" /></p>
+<p>En nuestro ejemplo del biomarcador del Índice de masa corporal, la curva ROC es:</p>
+<p><img src="img/3.3.6_roc4.png" width="593" /></p>
+<p>Por lo que parece que el biomarcador del Índice de masa corporal tiene capacidad predictiva para discriminar el cáncer de mama de los sujetos normales. Para ello se calcula un valor, el área debajo de la curva (AUC Area Under the Curve) que, en este caso, es de 0.78. El mejor valor es 1 (clasificador perfecto) mientras que el peor es 0.5 (adivinando).</p>
+<p>Intuitivamente, si consideramos que un AUC = 0.75 se encuentra a medio camino entre la no-discriminación (AUC = 0.50) y la discriminación perfecta (AUC = 1.00), el AUC del biomarcador del Índice de masa corporal se encuentra más cercana a la perfección que a la no-discriminación (AUC = 0.78), por lo tanto, resulta razonable plantear que es un test diagnóstico con una capacidad aceptable de discriminar pacientes con y sin cáncer de mama.</p>
+<p>Se ha pretendido mostrar la eficacia de un clasificador o método de diagnóstico clínico desde un punto de vista descriptivo. En el apartado de estadística inferencial veremos con más detalle todos estos aspectos.</p>
+
+</div>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="relación-entre-variable-numérica-y-cualitativa.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="inferencia-estadística.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/1fjmanzano/bioestadistica/edit/master/03-relacion_variables.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/1fjmanzano/bioestadistica/blob/master/03-relacion_variables.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
