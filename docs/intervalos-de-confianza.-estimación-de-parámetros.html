@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4.4 Intervalos de confianza. Estimación de parámetros | Curso de Bioestadística</title>
+  <meta name="description" content="4.4 Intervalos de confianza. Estimación de parámetros | Curso de Bioestadística" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4.4 Intervalos de confianza. Estimación de parámetros | Curso de Bioestadística" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4.4 Intervalos de confianza. Estimación de parámetros | Curso de Bioestadística" />
+  
+  
+  
+
+<meta name="author" content="Javier Manzano" />
+
+
+<meta name="date" content="2022-08-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="distribuciones-de-probabilidad.html"/>
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Curso de Bioestadística</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="prácticas-con-excel.html"><a href="prácticas-con-excel.html"><i class="fa fa-check"></i><b>1.1</b> Prácticas con Excel©</a></li>
+<li class="chapter" data-level="1.2" data-path="prácticas-con-rstudio.html"><a href="prácticas-con-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Prácticas con RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html"><i class="fa fa-check"></i><b>2</b> Análisis Exploratorio de Datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="conceptos-previos.html"><a href="conceptos-previos.html"><i class="fa fa-check"></i><b>2.1</b> Conceptos previos</a></li>
+<li class="chapter" data-level="2.2" data-path="tipos-de-variables.html"><a href="tipos-de-variables.html"><i class="fa fa-check"></i><b>2.2</b> Tipos de variables</a></li>
+<li class="chapter" data-level="2.3" data-path="tablas-de-frecuencias.html"><a href="tablas-de-frecuencias.html"><i class="fa fa-check"></i><b>2.3</b> Tablas de frecuencias</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="tablas-de-frecuencias.html"><a href="tablas-de-frecuencias.html#tabla-de-frecuencias-práctica-con-excel"><i class="fa fa-check"></i><b>2.3.1</b> Tabla de frecuencias (Práctica con Excel©)</a></li>
+<li class="chapter" data-level="2.3.2" data-path="tablas-de-frecuencias.html"><a href="tablas-de-frecuencias.html#tabla-de-frecuencias-práctica-con-r"><i class="fa fa-check"></i><b>2.3.2</b> Tabla de frecuencias (Práctica con R)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="tablas-de-frecuencias.html"><a href="tablas-de-frecuencias.html#tablas-de-frecuencias-práctica-2con-excel"><i class="fa fa-check"></i><b>2.3.3</b> Tablas de frecuencias (Práctica 2con Excel©)</a></li>
+<li class="chapter" data-level="2.3.4" data-path="tablas-de-frecuencias.html"><a href="tablas-de-frecuencias.html#tablas-de-frecuencias-práctica-3-con-excel"><i class="fa fa-check"></i><b>2.3.4</b> Tablas de frecuencias (Práctica 3 con Excel© )</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="números-índices.html"><a href="números-índices.html"><i class="fa fa-check"></i><b>2.4</b> Números índices</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="números-índices.html"><a href="números-índices.html#números-índices-práctica-con-excel"><i class="fa fa-check"></i><b>2.4.1</b> Números índices (Práctica con Excel©)</a></li>
+<li class="chapter" data-level="2.4.2" data-path="números-índices.html"><a href="números-índices.html#números-índices-práctica-con-r"><i class="fa fa-check"></i><b>2.4.2</b> Números índices (Práctica con R)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="representaciones-gráficas.html"><a href="representaciones-gráficas.html"><i class="fa fa-check"></i><b>2.5</b> Representaciones gráficas</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="representaciones-gráficas.html"><a href="representaciones-gráficas.html#introduccción"><i class="fa fa-check"></i><b>2.5.1</b> Introduccción</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="diagramas-de-barras-y-sectores.html"><a href="diagramas-de-barras-y-sectores.html"><i class="fa fa-check"></i><b>2.6</b> Diagramas de barras y sectores</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="diagramas-de-barras-y-sectores.html"><a href="diagramas-de-barras-y-sectores.html#diagramas-de-barras-y-sectores-práctica-con-excel"><i class="fa fa-check"></i><b>2.6.1</b> Diagramas de barras y sectores (Práctica con Excel©)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="histogramas.html"><a href="histogramas.html"><i class="fa fa-check"></i><b>2.7</b> Histogramas</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="histogramas.html"><a href="histogramas.html#histogramas-con-excel-prácticas"><i class="fa fa-check"></i><b>2.7.1</b> Histogramas con Excel© (Prácticas)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="otros-gráficos.html"><a href="otros-gráficos.html"><i class="fa fa-check"></i><b>2.8</b> Otros gráficos</a></li>
+<li class="chapter" data-level="2.9" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html"><i class="fa fa-check"></i><b>2.9</b> Medidas de posición, dispersión y forma</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-de-posición-centrales"><i class="fa fa-check"></i><b>2.9.1</b> Medidas de posición centrales</a></li>
+<li class="chapter" data-level="2.9.2" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-centrales-práctica"><i class="fa fa-check"></i><b>2.9.2</b> Medidas centrales (Práctica)</a></li>
+<li class="chapter" data-level="2.9.3" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-de-posición-no-centrales"><i class="fa fa-check"></i><b>2.9.3</b> Medidas de posición no centrales</a></li>
+<li class="chapter" data-level="2.9.4" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-no-centrales-práctica"><i class="fa fa-check"></i><b>2.9.4</b> Medidas no centrales (Práctica)</a></li>
+<li class="chapter" data-level="2.9.5" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-de-dispersión"><i class="fa fa-check"></i><b>2.9.5</b> Medidas de dispersión</a></li>
+<li class="chapter" data-level="2.9.6" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-de-dispersión-práctica"><i class="fa fa-check"></i><b>2.9.6</b> Medidas de dispersión (Práctica)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="normalización-de-datos.html"><a href="normalización-de-datos.html"><i class="fa fa-check"></i><b>2.10</b> Normalización de datos</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="normalización-de-datos.html"><a href="normalización-de-datos.html#normalización-de-datos-práctica"><i class="fa fa-check"></i><b>2.10.1</b> Normalización de datos (Práctica)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="medidas-de-forma.html"><a href="medidas-de-forma.html"><i class="fa fa-check"></i><b>2.11</b> Medidas de forma</a></li>
+<li class="chapter" data-level="2.12" data-path="análisis-de-datos-con-excel-práctica.html"><a href="análisis-de-datos-con-excel-práctica.html"><i class="fa fa-check"></i><b>2.12</b> Análisis de datos con Excel© (Práctica)</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="relación-entre-variables.html"><a href="relación-entre-variables.html"><i class="fa fa-check"></i><b>3</b> Relación entre variables</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html"><i class="fa fa-check"></i><b>3.1</b> Relación entre variables numéricas</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#diagramas-de-dispersión"><i class="fa fa-check"></i><b>3.1.1</b> Diagramas de dispersión</a></li>
+<li class="chapter" data-level="3.1.2" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#covarianza"><i class="fa fa-check"></i><b>3.1.2</b> Covarianza</a></li>
+<li class="chapter" data-level="3.1.3" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#coeficiente-de-correlación"><i class="fa fa-check"></i><b>3.1.3</b> Coeficiente de correlación</a></li>
+<li class="chapter" data-level="3.1.4" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#correlación-entre-2-variables-numéricas-práctica"><i class="fa fa-check"></i><b>3.1.4</b> Correlación entre 2 variables numéricas (Práctica)</a></li>
+<li class="chapter" data-level="3.1.5" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#regresión-lineal"><i class="fa fa-check"></i><b>3.1.5</b> Regresión lineal</a></li>
+<li class="chapter" data-level="3.1.6" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#regresión-práctica"><i class="fa fa-check"></i><b>3.1.6</b> Regresión (Práctica)</a></li>
+<li class="chapter" data-level="3.1.7" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#regresión-lineal-múltiple"><i class="fa fa-check"></i><b>3.1.7</b> Regresión lineal múltiple</a></li>
+<li class="chapter" data-level="3.1.8" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#regresión-múltiple-práctica"><i class="fa fa-check"></i><b>3.1.8</b> Regresión múltiple (Práctica)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="relación-entre-variable-numérica-y-cualitativa.html"><a href="relación-entre-variable-numérica-y-cualitativa.html"><i class="fa fa-check"></i><b>3.2</b> Relación entre variable numérica y cualitativa</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="relación-entre-variable-numérica-y-cualitativa.html"><a href="relación-entre-variable-numérica-y-cualitativa.html#relación-entre-variable-cualitativa-y-numérica-práctica"><i class="fa fa-check"></i><b>3.2.1</b> Relación entre variable cualitativa y numérica (Práctica)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html"><i class="fa fa-check"></i><b>3.3</b> Relación entre variables cualitativas</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#tablas-de-contingencia"><i class="fa fa-check"></i><b>3.3.1</b> Tablas de contingencia</a></li>
+<li class="chapter" data-level="3.3.2" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#diagrama-de-barras-agrupadas"><i class="fa fa-check"></i><b>3.3.2</b> Diagrama de barras agrupadas</a></li>
+<li class="chapter" data-level="3.3.3" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#gráficos-de-rectángulos-para-comparar-variables-cuantitativas"><i class="fa fa-check"></i><b>3.3.3</b> Gráficos de rectángulos para comparar variables cuantitativas</a></li>
+<li class="chapter" data-level="3.3.4" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#gráficos-o-diagramas-de-rectángulos-práctica"><i class="fa fa-check"></i><b>3.3.4</b> Gráficos o diagramas de rectángulos (Práctica)</a></li>
+<li class="chapter" data-level="3.3.5" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#diagnóstico-clínico"><i class="fa fa-check"></i><b>3.3.5</b> Diagnóstico clínico</a></li>
+<li class="chapter" data-level="3.3.6" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#curvas-roc-receiver-operating-characteristic-curve"><i class="fa fa-check"></i><b>3.3.6</b> Curvas ROC (Receiver Operating characteristic Curve)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="inferencia-estadística.html"><a href="inferencia-estadística.html"><i class="fa fa-check"></i><b>4</b> Inferencia Estadística</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="métodos-de-muestreo.html"><a href="métodos-de-muestreo.html"><i class="fa fa-check"></i><b>4.1</b> Métodos de muestreo</a></li>
+<li class="chapter" data-level="4.2" data-path="valor-p.html"><a href="valor-p.html"><i class="fa fa-check"></i><b>4.2</b> Valor p</a></li>
+<li class="chapter" data-level="4.3" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html"><i class="fa fa-check"></i><b>4.3</b> Distribuciones de probabilidad</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html#distribución-normal"><i class="fa fa-check"></i><b>4.3.1</b> Distribución normal</a></li>
+<li class="chapter" data-level="4.3.2" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html#normalidad-de-los-datos"><i class="fa fa-check"></i><b>4.3.2</b> Normalidad de los datos</a></li>
+<li class="chapter" data-level="4.3.3" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html#normalidad-de-los-datos-práctica"><i class="fa fa-check"></i><b>4.3.3</b> Normalidad de los datos (Práctica)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html#distribución-z"><i class="fa fa-check"></i><b>4.3.4</b> Distribución Z</a></li>
+<li class="chapter" data-level="4.3.5" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html#cálculo-del-valor-p-práctica"><i class="fa fa-check"></i><b>4.3.5</b> Cálculo del valor p (Práctica)</a></li>
+<li class="chapter" data-level="4.3.6" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html#distribución-t-de-student"><i class="fa fa-check"></i><b>4.3.6</b> Distribución t de Student</a></li>
+<li class="chapter" data-level="4.3.7" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html#distribución-chi2-chi-cuadrado-o-ji.cuadrado"><i class="fa fa-check"></i><b>4.3.7</b> Distribución <span class="math inline">\(\chi^2\)</span> (chi-cuadrado o ji.cuadrado)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="intervalos-de-confianza.-estimación-de-parámetros.html"><a href="intervalos-de-confianza.-estimación-de-parámetros.html"><i class="fa fa-check"></i><b>4.4</b> Intervalos de confianza. Estimación de parámetros</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="intervalos-de-confianza.-estimación-de-parámetros.html"><a href="intervalos-de-confianza.-estimación-de-parámetros.html#intervalo-de-confianza-para-la-media"><i class="fa fa-check"></i><b>4.4.1</b> Intervalo de confianza para la media</a></li>
+<li class="chapter" data-level="4.4.2" data-path="intervalos-de-confianza.-estimación-de-parámetros.html"><a href="intervalos-de-confianza.-estimación-de-parámetros.html#intervalo-de-confianza-para-la-media-práctica"><i class="fa fa-check"></i><b>4.4.2</b> Intervalo de confianza para la media (Práctica)</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Curso de Bioestadística</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intervalos-de-confianza.-estimación-de-parámetros" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Intervalos de confianza. Estimación de parámetros</h2>
+<p>Cuando queremos obtener parámetros poblacionales (media, proporción) a partir de una muestra aleatoria, estamos en condiciones de acotar el error con un cierto grado de confianza, es decir, de aportar un intervalo en el cual esperamos que se encuentre el valor desconocido del parámetro poblacional. Los márgenes de error se basan en cálculos probabilísticos. Así, vamos a ver cómo obtener una estimación de entre qué dos valores se puede encontrar un cierto parámetro poblacional a partir de los datos de una muestra con una probabilidad prefijada. A esto nos dedicaremos en este punto en el que abordaremos la estimación mediante intervalos de confianza.</p>
+<p>Llamamos <strong>intervalo de confianza</strong> para un parámetro poblacional (media <span class="math inline">\(\mu\)</span> o proporción p) al intervalo que contiene a dicho parámetro con una probabilidad 1-<span class="math inline">\(\alpha\)</span>, también llamado <strong>nivel de confianza</strong> 1-α. Al valor de <span class="math inline">\(\alpha\)</span> se le llama <strong>nivel de significación</strong>.</p>
+<div id="intervalo-de-confianza-para-la-media" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Intervalo de confianza para la media</h3>
+<p>Si queremos inferir el valor de la media poblacional <span class="math inline">\(\mu\)</span> a partir de los valores de una muestra con una confianza del 95%, las Matemáticas detrás de los intervalos de confianza construyen una distribución a partir de la muestra basada en los valores de los datos y calculan qué área estaría cubierta por el 95% (para un nivel de confianza del 95%) de la curva. Los valores del eje X se reconstituyen a valores reales, que son los valores inferior y superior del intervalo de confianza.</p>
+<p><img src="img/4.4.1_intervalo.png" width="625" /></p>
+<p>De este modo, si <span class="math inline">\(E_{max}\)</span> es el margen máximo de error de la estimación de <span class="math inline">\(\mu\)</span> con una confianza del 95 %, es decir, la diferencia entre el valor superior y la media muestral <span class="math inline">\(\overline{x}\)</span>, podemos inferir que la media poblacional <span class="math inline">\(\mu\)</span>, con una confianza del 95%, estará entre los valores <span class="math inline">\(\overline{x}\)</span> - <span class="math inline">\(E_{max}\)</span>x y <span class="math inline">\(\overline{x}\)</span> + <span class="math inline">\(E_{max}\)</span>.</p>
+<p>Si conocemos la desviación típica poblacional <span class="math inline">\(\sigma\)</span> , la distribución para el cálculo del intervalo de confianza será una normal pero si no conocemos dicha desviación típica poblacional (que es lo más frecuente) y únicamente disponemos de la desviación típica de la muestra <span class="math inline">\(s\)</span>, la distribución a utilizar será la t de Student.</p>
+<p><img src="img/4.4.1_dist_int.png" width="655" /></p>
+<p>Para la distribución normal de media 0 y desviación típica 1. el valor crítico de 1,96 indica que el área entre -1,96 y 1,96 es 0,95.</p>
+<p><img src="img/4.4.1_196.png" width="411" /></p>
+<p>Ese valor se puede obtener tanto con programas estadísticos como con la hoja de cálculo con la función =INV.NORM.ESTAND(0,975).</p>
+<p>En el caso de la t de Student, para obtener el valor de <span class="math inline">\(t_{\alpha/2}\)</span> debemos tener en cuenta los grados de libertad (nº de datos nº de categorías). Por ejemplo, para 10 grados de libertad, el valor crítico con confianza del 95% es 2,23.</p>
+<p><img src="img/4.4.1_223.png" width="401" /></p>
+<p>Ese valor se puede obtener tanto con programas estadísticos como con la hoja de cálculo con la función =INV.T.2C(0,05;10). La instrucción 2C hace referencia a 2 colas, es decir, a una área tanto a la izquierda como a la derecha.</p>
+<p>El verdadero significado del nivel de confianza de un 95% es que si el estudio se repite 100 veces (cada uno con su propia muestra aleatoria de pacientes de la población, cada uno con su propia media e intervalos de confianza del 95%), 95 de dichos estudios tendrán correctamente el parámetro de población dentro de los intervalos y 5 no lo tendrán. Sin embargo, no hay manera de saber cuál tiene para un estudio determinado.</p>
+</div>
+<div id="intervalo-de-confianza-para-la-media-práctica" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Intervalo de confianza para la media (Práctica)</h3>
+<p>Para realizar esta práctica, debe tener descargado en su ordenador el archivo <a href="https://github.com/1fjmanzano/bioestadistica/blob/master/3.practicas.xlsx">3.practicas.xlsx</a> y abrir la hoja/pestaña intervalo_confianza.</p>
+<p>Tenemos datos de la siguiente muestra de 30 individuos:</p>
+<p><img src="img/4.4.2_datos.png" width="329" /></p>
+<p>y queremos un intervalo de confianza para la media poblacional <span class="math inline">\(\mu\)</span> con una confianza del 95%.</p>
+<p>Con la herramienta de Estadística Descriptiva del análisis de datos, activando el Nivel de confianza para la media al 95% con los datos distribuidos en una columna:</p>
+<p><img src="img/4.4.2_analisis_datos.png" width="657" /></p>
+<p>obtenemos una media muestral <span class="math inline">\(\overline{x}\)</span> de 10,08 valor <span class="math inline">\(E_{max}\)</span> de 0.57.</p>
+<p><img src="img/4.4.2_057.png" width="224" /></p>
+<p>Entonces a partir de los resultados de la muestra, el intervalo de confianza al 95% para la media poblacional <span class="math inline">\(\mu\)</span> es:</p>
+<p><span class="math inline">\((10,07666667 - 0,572688088, 10,07666667 + 0,572688088)\)</span></p>
+<p>Lo que es lo mismo que decir que, con los datos disponibles y una confianza del 95%, la media poblacional <span class="math inline">\(\mu\)</span> estará entre 9,5 y 10,6 (redondeando a un decimal).</p>
+<p>También podemos utilizar la aplicación web Statistical Inference for <span class="math inline">\(\mu\)</span> disponible en <a href="https://homepage.divms.uiowa.edu/~mbognar/applets/mu.raw.html" class="uri">https://homepage.divms.uiowa.edu/~mbognar/applets/mu.raw.html</a></p>
+<p>Debemos introducir:</p>
+<ul>
+<li>el número de datos n: 30 en nuestro caso</li>
+<li>la media muestral <span class="math inline">\(\overline{x}\)</span>: 10.08 en nuestro caso</li>
+<li>la desviación típica muestral s (ya que no conocemos la poblacional <span class="math inline">\(\sigma\)</span>): 1.53 en nuestro caso</li>
+<li>por defecto, en nivel de confianza es del 95%</li>
+</ul>
+<p><strong>Atención</strong>: para valores decimales, Excel© utiliza una coma y la aplicación web utiliza un punto.</p>
+<p>Si vemos el resultado</p>
+<p><img src="img/4.4.2_conf_bognar.png" width="547" /></p>
+
+</div>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="distribuciones-de-probabilidad.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/1fjmanzano/bioestadistica/edit/master/04-inferencia.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/1fjmanzano/bioestadistica/blob/master/04-inferencia.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
