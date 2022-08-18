@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4.5 Contrastes de Hipótesis | Curso de Bioestadística</title>
+  <meta name="description" content="4.5 Contrastes de Hipótesis | Curso de Bioestadística" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4.5 Contrastes de Hipótesis | Curso de Bioestadística" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4.5 Contrastes de Hipótesis | Curso de Bioestadística" />
+  
+  
+  
+
+<meta name="author" content="Javier Manzano" />
+
+
+<meta name="date" content="2022-08-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="estimación-de-parámetros.-intervalos-de-confianza.html"/>
+<link rel="next" href="contrastes-paramétricos-y-no-paramétricos.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Curso de Bioestadística</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="prácticas-con-excel.html"><a href="prácticas-con-excel.html"><i class="fa fa-check"></i><b>1.1</b> Prácticas con Excel©</a></li>
+<li class="chapter" data-level="1.2" data-path="prácticas-con-rstudio.html"><a href="prácticas-con-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Prácticas con RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="análisis-exploratorio-de-datos.html"><a href="análisis-exploratorio-de-datos.html"><i class="fa fa-check"></i><b>2</b> Análisis Exploratorio de Datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="conceptos-previos.html"><a href="conceptos-previos.html"><i class="fa fa-check"></i><b>2.1</b> Conceptos previos</a></li>
+<li class="chapter" data-level="2.2" data-path="tipos-de-variables.html"><a href="tipos-de-variables.html"><i class="fa fa-check"></i><b>2.2</b> Tipos de variables</a></li>
+<li class="chapter" data-level="2.3" data-path="tablas-de-frecuencias.html"><a href="tablas-de-frecuencias.html"><i class="fa fa-check"></i><b>2.3</b> Tablas de frecuencias</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="tablas-de-frecuencias.html"><a href="tablas-de-frecuencias.html#tabla-de-frecuencias-práctica-con-excel"><i class="fa fa-check"></i><b>2.3.1</b> Tabla de frecuencias (Práctica con Excel©)</a></li>
+<li class="chapter" data-level="2.3.2" data-path="tablas-de-frecuencias.html"><a href="tablas-de-frecuencias.html#tabla-de-frecuencias-práctica-con-r"><i class="fa fa-check"></i><b>2.3.2</b> Tabla de frecuencias (Práctica con R)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="tablas-de-frecuencias.html"><a href="tablas-de-frecuencias.html#tablas-de-frecuencias-práctica-2con-excel"><i class="fa fa-check"></i><b>2.3.3</b> Tablas de frecuencias (Práctica 2con Excel©)</a></li>
+<li class="chapter" data-level="2.3.4" data-path="tablas-de-frecuencias.html"><a href="tablas-de-frecuencias.html#tablas-de-frecuencias-práctica-3-con-excel"><i class="fa fa-check"></i><b>2.3.4</b> Tablas de frecuencias (Práctica 3 con Excel© )</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="números-índices.html"><a href="números-índices.html"><i class="fa fa-check"></i><b>2.4</b> Números índices</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="números-índices.html"><a href="números-índices.html#números-índices-práctica-con-excel"><i class="fa fa-check"></i><b>2.4.1</b> Números índices (Práctica con Excel©)</a></li>
+<li class="chapter" data-level="2.4.2" data-path="números-índices.html"><a href="números-índices.html#números-índices-práctica-con-r"><i class="fa fa-check"></i><b>2.4.2</b> Números índices (Práctica con R)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="representaciones-gráficas.html"><a href="representaciones-gráficas.html"><i class="fa fa-check"></i><b>2.5</b> Representaciones gráficas</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="representaciones-gráficas.html"><a href="representaciones-gráficas.html#introduccción"><i class="fa fa-check"></i><b>2.5.1</b> Introduccción</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="diagramas-de-barras-y-sectores.html"><a href="diagramas-de-barras-y-sectores.html"><i class="fa fa-check"></i><b>2.6</b> Diagramas de barras y sectores</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="diagramas-de-barras-y-sectores.html"><a href="diagramas-de-barras-y-sectores.html#diagramas-de-barras-y-sectores-práctica-con-excel"><i class="fa fa-check"></i><b>2.6.1</b> Diagramas de barras y sectores (Práctica con Excel©)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="histogramas.html"><a href="histogramas.html"><i class="fa fa-check"></i><b>2.7</b> Histogramas</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="histogramas.html"><a href="histogramas.html#histogramas-con-excel-prácticas"><i class="fa fa-check"></i><b>2.7.1</b> Histogramas con Excel© (Prácticas)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="otros-gráficos.html"><a href="otros-gráficos.html"><i class="fa fa-check"></i><b>2.8</b> Otros gráficos</a></li>
+<li class="chapter" data-level="2.9" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html"><i class="fa fa-check"></i><b>2.9</b> Medidas de posición, dispersión y forma</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-de-posición-centrales"><i class="fa fa-check"></i><b>2.9.1</b> Medidas de posición centrales</a></li>
+<li class="chapter" data-level="2.9.2" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-centrales-práctica"><i class="fa fa-check"></i><b>2.9.2</b> Medidas centrales (Práctica)</a></li>
+<li class="chapter" data-level="2.9.3" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-de-posición-no-centrales"><i class="fa fa-check"></i><b>2.9.3</b> Medidas de posición no centrales</a></li>
+<li class="chapter" data-level="2.9.4" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-no-centrales-práctica"><i class="fa fa-check"></i><b>2.9.4</b> Medidas no centrales (Práctica)</a></li>
+<li class="chapter" data-level="2.9.5" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-de-dispersión"><i class="fa fa-check"></i><b>2.9.5</b> Medidas de dispersión</a></li>
+<li class="chapter" data-level="2.9.6" data-path="medidas-de-posición-dispersión-y-forma.html"><a href="medidas-de-posición-dispersión-y-forma.html#medidas-de-dispersión-práctica"><i class="fa fa-check"></i><b>2.9.6</b> Medidas de dispersión (Práctica)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="normalización-de-datos.html"><a href="normalización-de-datos.html"><i class="fa fa-check"></i><b>2.10</b> Normalización de datos</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="normalización-de-datos.html"><a href="normalización-de-datos.html#normalización-de-datos-práctica"><i class="fa fa-check"></i><b>2.10.1</b> Normalización de datos (Práctica)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="medidas-de-forma.html"><a href="medidas-de-forma.html"><i class="fa fa-check"></i><b>2.11</b> Medidas de forma</a></li>
+<li class="chapter" data-level="2.12" data-path="análisis-de-datos-con-excel-práctica.html"><a href="análisis-de-datos-con-excel-práctica.html"><i class="fa fa-check"></i><b>2.12</b> Análisis de datos con Excel© (Práctica)</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="relación-entre-variables.html"><a href="relación-entre-variables.html"><i class="fa fa-check"></i><b>3</b> Relación entre variables</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html"><i class="fa fa-check"></i><b>3.1</b> Relación entre variables numéricas</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#diagramas-de-dispersión"><i class="fa fa-check"></i><b>3.1.1</b> Diagramas de dispersión</a></li>
+<li class="chapter" data-level="3.1.2" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#covarianza"><i class="fa fa-check"></i><b>3.1.2</b> Covarianza</a></li>
+<li class="chapter" data-level="3.1.3" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#coeficiente-de-correlación"><i class="fa fa-check"></i><b>3.1.3</b> Coeficiente de correlación</a></li>
+<li class="chapter" data-level="3.1.4" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#correlación-entre-2-variables-numéricas-práctica"><i class="fa fa-check"></i><b>3.1.4</b> Correlación entre 2 variables numéricas (Práctica)</a></li>
+<li class="chapter" data-level="3.1.5" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#regresión-lineal"><i class="fa fa-check"></i><b>3.1.5</b> Regresión lineal</a></li>
+<li class="chapter" data-level="3.1.6" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#regresión-práctica"><i class="fa fa-check"></i><b>3.1.6</b> Regresión (Práctica)</a></li>
+<li class="chapter" data-level="3.1.7" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#regresión-lineal-múltiple"><i class="fa fa-check"></i><b>3.1.7</b> Regresión lineal múltiple</a></li>
+<li class="chapter" data-level="3.1.8" data-path="relación-entre-variables-numéricas.html"><a href="relación-entre-variables-numéricas.html#regresión-múltiple-práctica"><i class="fa fa-check"></i><b>3.1.8</b> Regresión múltiple (Práctica)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="relación-entre-variable-numérica-y-cualitativa.html"><a href="relación-entre-variable-numérica-y-cualitativa.html"><i class="fa fa-check"></i><b>3.2</b> Relación entre variable numérica y cualitativa</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="relación-entre-variable-numérica-y-cualitativa.html"><a href="relación-entre-variable-numérica-y-cualitativa.html#relación-entre-variable-cualitativa-y-numérica-práctica"><i class="fa fa-check"></i><b>3.2.1</b> Relación entre variable cualitativa y numérica (Práctica)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html"><i class="fa fa-check"></i><b>3.3</b> Relación entre variables cualitativas</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#tablas-de-contingencia"><i class="fa fa-check"></i><b>3.3.1</b> Tablas de contingencia</a></li>
+<li class="chapter" data-level="3.3.2" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#diagrama-de-barras-agrupadas"><i class="fa fa-check"></i><b>3.3.2</b> Diagrama de barras agrupadas</a></li>
+<li class="chapter" data-level="3.3.3" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#gráficos-de-rectángulos-para-comparar-variables-cuantitativas"><i class="fa fa-check"></i><b>3.3.3</b> Gráficos de rectángulos para comparar variables cuantitativas</a></li>
+<li class="chapter" data-level="3.3.4" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#gráficos-o-diagramas-de-rectángulos-práctica"><i class="fa fa-check"></i><b>3.3.4</b> Gráficos o diagramas de rectángulos (Práctica)</a></li>
+<li class="chapter" data-level="3.3.5" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#diagnóstico-clínico"><i class="fa fa-check"></i><b>3.3.5</b> Diagnóstico clínico</a></li>
+<li class="chapter" data-level="3.3.6" data-path="relación-entre-variables-cualitativas.html"><a href="relación-entre-variables-cualitativas.html#curvas-roc-receiver-operating-characteristic-curve"><i class="fa fa-check"></i><b>3.3.6</b> Curvas ROC (Receiver Operating characteristic Curve)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="inferencia-estadística.html"><a href="inferencia-estadística.html"><i class="fa fa-check"></i><b>4</b> Inferencia Estadística</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="métodos-de-muestreo.html"><a href="métodos-de-muestreo.html"><i class="fa fa-check"></i><b>4.1</b> Métodos de muestreo</a></li>
+<li class="chapter" data-level="4.2" data-path="valor-p.html"><a href="valor-p.html"><i class="fa fa-check"></i><b>4.2</b> Valor p</a></li>
+<li class="chapter" data-level="4.3" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html"><i class="fa fa-check"></i><b>4.3</b> Distribuciones de probabilidad</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html#distribución-normal"><i class="fa fa-check"></i><b>4.3.1</b> Distribución normal</a></li>
+<li class="chapter" data-level="4.3.2" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html#normalidad-de-los-datos"><i class="fa fa-check"></i><b>4.3.2</b> Normalidad de los datos</a></li>
+<li class="chapter" data-level="4.3.3" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html#normalidad-de-los-datos-práctica"><i class="fa fa-check"></i><b>4.3.3</b> Normalidad de los datos (Práctica)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html#distribución-z"><i class="fa fa-check"></i><b>4.3.4</b> Distribución Z</a></li>
+<li class="chapter" data-level="4.3.5" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html#cálculo-del-valor-p-práctica"><i class="fa fa-check"></i><b>4.3.5</b> Cálculo del valor p (Práctica)</a></li>
+<li class="chapter" data-level="4.3.6" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html#distribución-t-de-student"><i class="fa fa-check"></i><b>4.3.6</b> Distribución t de Student</a></li>
+<li class="chapter" data-level="4.3.7" data-path="distribuciones-de-probabilidad.html"><a href="distribuciones-de-probabilidad.html#distribución-chi2-chi-cuadrado-o-ji.cuadrado"><i class="fa fa-check"></i><b>4.3.7</b> Distribución <span class="math inline">\(\chi^2\)</span> (chi-cuadrado o ji.cuadrado)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="estimación-de-parámetros.-intervalos-de-confianza.html"><a href="estimación-de-parámetros.-intervalos-de-confianza.html"><i class="fa fa-check"></i><b>4.4</b> Estimación de parámetros. Intervalos de confianza</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="estimación-de-parámetros.-intervalos-de-confianza.html"><a href="estimación-de-parámetros.-intervalos-de-confianza.html#intervalo-de-confianza-para-la-media"><i class="fa fa-check"></i><b>4.4.1</b> Intervalo de confianza para la media</a></li>
+<li class="chapter" data-level="4.4.2" data-path="estimación-de-parámetros.-intervalos-de-confianza.html"><a href="estimación-de-parámetros.-intervalos-de-confianza.html#intervalo-de-confianza-para-la-media-práctica"><i class="fa fa-check"></i><b>4.4.2</b> Intervalo de confianza para la media (Práctica)</a></li>
+<li class="chapter" data-level="4.4.3" data-path="estimación-de-parámetros.-intervalos-de-confianza.html"><a href="estimación-de-parámetros.-intervalos-de-confianza.html#intervalo-de-confianza-para-una-proporción"><i class="fa fa-check"></i><b>4.4.3</b> Intervalo de confianza para una proporción</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="contrastes-de-hipótesis.html"><a href="contrastes-de-hipótesis.html"><i class="fa fa-check"></i><b>4.5</b> Contrastes de Hipótesis</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="contrastes-de-hipótesis.html"><a href="contrastes-de-hipótesis.html#contrastes-bilaterales-y-unilaterales"><i class="fa fa-check"></i><b>4.5.1</b> Contrastes bilaterales y unilaterales</a></li>
+<li class="chapter" data-level="4.5.2" data-path="contrastes-de-hipótesis.html"><a href="contrastes-de-hipótesis.html#nivel-de-confianza-y-potencia-estadística"><i class="fa fa-check"></i><b>4.5.2</b> Nivel de confianza y potencia estadística</a></li>
+<li class="chapter" data-level="4.5.3" data-path="contrastes-de-hipótesis.html"><a href="contrastes-de-hipótesis.html#tamaño-de-la-muestra"><i class="fa fa-check"></i><b>4.5.3</b> Tamaño de la muestra</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="contrastes-paramétricos-y-no-paramétricos.html"><a href="contrastes-paramétricos-y-no-paramétricos.html"><i class="fa fa-check"></i><b>4.6</b> Contrastes paramétricos y no paramétricos</a></li>
+<li class="chapter" data-level="4.7" data-path="métodos-de-inferencia-estadística.html"><a href="métodos-de-inferencia-estadística.html"><i class="fa fa-check"></i><b>4.7</b> Métodos de Inferencia Estadística</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="métodos-de-inferencia-estadística.html"><a href="métodos-de-inferencia-estadística.html#test-de-student-para-muestras-independientes"><i class="fa fa-check"></i><b>4.7.1</b> Test de Student para muestras independientes</a></li>
+<li class="chapter" data-level="4.7.2" data-path="métodos-de-inferencia-estadística.html"><a href="métodos-de-inferencia-estadística.html#t-test-práctica"><i class="fa fa-check"></i><b>4.7.2</b> t-test (Práctica)</a></li>
+<li class="chapter" data-level="4.7.3" data-path="métodos-de-inferencia-estadística.html"><a href="métodos-de-inferencia-estadística.html#prueba-de-mann-whitney"><i class="fa fa-check"></i><b>4.7.3</b> Prueba de Mann-Whitney</a></li>
+<li class="chapter" data-level="4.7.4" data-path="métodos-de-inferencia-estadística.html"><a href="métodos-de-inferencia-estadística.html#anova-de-un-factor"><i class="fa fa-check"></i><b>4.7.4</b> Anova de un factor</a></li>
+<li class="chapter" data-level="4.7.5" data-path="métodos-de-inferencia-estadística.html"><a href="métodos-de-inferencia-estadística.html#prueba-de-kruskal-wallis"><i class="fa fa-check"></i><b>4.7.5</b> Prueba de Kruskal-Wallis</a></li>
+<li class="chapter" data-level="4.7.6" data-path="métodos-de-inferencia-estadística.html"><a href="métodos-de-inferencia-estadística.html#test-de-student-para-muestras-relacionadas"><i class="fa fa-check"></i><b>4.7.6</b> Test de Student para muestras relacionadas</a></li>
+<li class="chapter" data-level="4.7.7" data-path="métodos-de-inferencia-estadística.html"><a href="métodos-de-inferencia-estadística.html#t-test-emparejadas-práctica"><i class="fa fa-check"></i><b>4.7.7</b> t-test emparejadas (Práctica)</a></li>
+<li class="chapter" data-level="4.7.8" data-path="métodos-de-inferencia-estadística.html"><a href="métodos-de-inferencia-estadística.html#prueba-de-rangos-con-signo-de-wilcoxon"><i class="fa fa-check"></i><b>4.7.8</b> Prueba de rangos con signo de Wilcoxon</a></li>
+<li class="chapter" data-level="4.7.9" data-path="métodos-de-inferencia-estadística.html"><a href="métodos-de-inferencia-estadística.html#test-de-correlación-r"><i class="fa fa-check"></i><b>4.7.9</b> Test de correlación r</a></li>
+<li class="chapter" data-level="4.7.10" data-path="métodos-de-inferencia-estadística.html"><a href="métodos-de-inferencia-estadística.html#correlación-de-spearman"><i class="fa fa-check"></i><b>4.7.10</b> Correlación de Spearman</a></li>
+<li class="chapter" data-level="4.7.11" data-path="métodos-de-inferencia-estadística.html"><a href="métodos-de-inferencia-estadística.html#prueba-de-la-chi-cuadrado"><i class="fa fa-check"></i><b>4.7.11</b> Prueba de la chi-cuadrado</a></li>
+<li class="chapter" data-level="4.7.12" data-path="métodos-de-inferencia-estadística.html"><a href="métodos-de-inferencia-estadística.html#prueba-chi2-práctica"><i class="fa fa-check"></i><b>4.7.12</b> Prueba <span class="math inline">\(\chi^2\)</span> (Práctica)</a></li>
+<li class="chapter" data-level="4.7.13" data-path="métodos-de-inferencia-estadística.html"><a href="métodos-de-inferencia-estadística.html#prueba-exacta-de-fisher"><i class="fa fa-check"></i><b>4.7.13</b> Prueba exacta de Fisher</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Curso de Bioestadística</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="contrastes-de-hipótesis" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Contrastes de Hipótesis</h2>
+<p>El último paso en el estudio de la Inferencia Estadística que vamos a abordar es el llamado <strong>Contraste de Hipótesis</strong>, cuyo principal objetivo es tomar decisiones sobre si determinadas hipótesis o supuestos a partir de muestras, pueden extrapolarse a la población con un determinado nivel de confianza.</p>
+<p>Un contraste o <strong>test de hipótesis</strong> es el procedimiento estadístico mediante el cual se investiga la veracidad o falsedad de una hipótesis acerca de algún parámetro poblacional.</p>
+<p>Llamaremos hipótesis nula <span class="math inline">\(H_0\)</span> a la hipótesis que se formula y que se desea contrastar y llamaremos hipótesis alternativa <span class="math inline">\(H_1\)</span> a cualquiera otra situación que sea contraria a la hipótesis nula
+.
+Se llaman <strong>pruebas de hipótesis</strong> a los procedimientos que permiten decidir si una hipótesis se acepta o rechaza o determinar si las muestras observadas difieren significativamente de los resultados esperados.</p>
+<p>Como en todo estudio, podemos cometer errores debidos a que la información muestral nos da a pensar en algo distinto a las hipótesis debido a que la muestra, por el motivo que sea, no es lo suficientemente representativa de la población estudiada.</p>
+<p>Tomemos como ejemplo juzgar a un individuo por la presunta comisión de un delito. Consideramos como hipótesis nula <span class="math inline">\(H_0\)</span> que el individuo es inocente (no se encuentran indicios de culpabilidad). La hipótesis alternativa (contraria y excluyente a la hipótesis nula) sería <span class="math inline">\(H_1\)</span> que el individuo es culpable (se encuentran indicios de culpabilidad).</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: inocente</li>
+<li><span class="math inline">\(H_1\)</span>: culpable</li>
+</ul>
+<p>Así, los datos pueden refutar la hipótesis nula (que es inocente). Es la hipótesis que se acepta si las pruebas no indican lo contrario. Rechazarla por error tiene graves consecuencias (condenar a un inocente). Sin embargo, la hipótesis alternativa (es culpable) no debería ser aceptada sin una gran evidencia a favor. Rechazarla por error tiene consecuencias consideradas menos graves que la anterior (liberar a un delincuente). Es decir, el contraste de hipótesis consiste en evidencias de que es culpable (hipótesis de investigación). Si no se encuentran, se concluye que es inocente.</p>
+<p>Se distinguen entonces 2 tipos de error al tomar la decisión sobre un contraste de hipótesis: el error <span class="math inline">\(\alpha\)</span> y el error <span class="math inline">\(\beta\)</span>.</p>
+<p>Siguiendo con nuestro ejemplo, en esta tabla se muestran las posibilidades:</p>
+<p><img src="img/4.5_tabla.png" width="515" /></p>
+<p>Es decir, para condenar al individuo (rechazar la hipótesis nula) se deben tener pruebas muy convincentes. En Estadística, para aceptar o rechazar la hipótesis nula, se tiene en cuenta un <strong>valor p</strong> (generalmente &lt; 0,05).</p>
+<p>Este valor p que se va a obtener al realizar un contraste de hipótesis debe entenderse como la medida de la verosimilitud de la muestra según el modelo teórico inicial <span class="math inline">\(H_0\)</span> un valor p grande (&gt; 0,1) expresa que la muestra es verosímil (no extrema) según la hipótesis inicial, por lo que no estamos en condiciones de rechazarla. Por contra, un valor p pequeño (&lt; 0,05) indica que la muestra es poco verosímil (extrema) según <span class="math inline">\(H_0\)</span> por lo que debemos rechazar la hipótesis inicial $H_0 $en favor de su alternativa <span class="math inline">\(H_1\)</span>.</p>
+<p>Consideremos ahora que estamos comparando la eficacia clínica de 2 fármacos A y B. Establecemos las hipótesis:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: No existen diferencias significativas en la eficacia clínica de dos fármacos A y B (A=B)</li>
+<li><span class="math inline">\(H_1\)</span>: Existen diferencias en la eficacia clínica de dos fármacos A y B (A̸ <span class="math inline">\(\neq\)</span> B)</li>
+</ul>
+<p><img src="img/4.5_tabla2.png" width="625" /></p>
+<p>Tenemos entonces:</p>
+<ul>
+<li>Error tipo I (alfa): rechazamos la <span class="math inline">\(H_0\)</span> siendo ésta verdadera (se concluye que existe diferencia cuando en realidad no la hay).</li>
+<li>Error tipo II (beta): no rechazamos la <span class="math inline">\(H_0\)</span> siendo ésta falsa (se concluye que no se ha podido encontrar encontrar una diferencia que existe en la realidad).</li>
+</ul>
+<p>La <strong>potencia estadística</strong> (1 -<span class="math inline">\(\beta\)</span>) es la capacidad del estudio para detectar una diferencia si ésta existe realmente. <span class="math inline">\(\beta\)</span> es la probabilidad de cometer un error beta (tipo II).</p>
+<p>El <strong>nivel de confianza</strong> (1 - <span class="math inline">\(\alpha\)</span>) es la probabilidad a priori de que el intervalo de confianza (IC) a calcular contenga al verdadero valor del parámetro. Es la probabilidad de un error alfa (tipo I).</p>
+<p>La situación ideal sería elegir una prueba (contraste) para el que las dos probabilidades de error sean cero, pero esto no es posible. Además, para un tamaño muestral fijo, si una de las dos probabilidades de error disminuye entonces la otra aumenta. La única forma de que las dos probabilidades de error disminuyan a la vez es aumentando el tamaño de la muestra.</p>
+<div id="contrastes-bilaterales-y-unilaterales" class="section level3" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Contrastes bilaterales y unilaterales</h3>
+<p>Tenemos 2 formas de establecer la hipótesis de investigación (hipótesis alternativa <span class="math inline">\(H_1\)</span>):</p>
+<ul>
+<li>Bilateral: cualquiera de los dos parámetros a comparar puede ser mayor o menor que el otro (no hay dirección) (A ≠ B).</li>
+<li>Unilateral: cuando se considera que uno debe ser mayor que el otro (dirección de las diferencias) (A &lt; B).</li>
+</ul>
+<p>Siguiendo con el ejemplo de comparar la eficacia de 2 fármacos A y B, la prueba unilateral se utiliza cuando se pretende determinar si el fármaco nuevo B es más eficaz que el clásico A, es decir, tan sólo interesa una de las direcciones de la comparación (B &gt; A) ya que interesa demostrar que B sea más efectivo que A. Sin embargo, la prueba bilateral se utiliza para determinar si los dos fármacos A y B difieren en su efectividad clínica (A ≠ B).</p>
+<p>La siguiente imagen ilustra estas 2 opciones:</p>
+<p><img src="img/4.5.1_unibi.png" width="592" /></p>
+<p>En rojo tenemos la región de rechazo de la hipótesis nula para un contraste unilateral y para uno bilateral. Como hemos comentado, un valor p pequeño (en la zona de rechazo) indica que la muestra es poco verosímil (extrema) segun <span class="math inline">\(H_0\)</span> por lo que debemos rechazar la hipótesis nula en favor de su alternativa <span class="math inline">\(H_1\)</span>. En el caso contrario, un valor p grande (fuera de la zona de rechazo) expresa que la muestra es verosímil según la hipótesis inicial, por lo que no estamos en condiciones de rechazarla.</p>
+<p>Para aclarar estos conceptos, vamos a considerar el siguiente ejemplo:</p>
+<p>Una empresa farmacéutica vende un producto cuyos efectos tienen una duración que se distribuye normalmente con media <span class="math inline">\(\mu_0\)</span> = 36 horas y desviación típica poblacional <span class="math inline">\(\sigma\)</span> = 1 hora. La empresa está probando una variante del producto diseñada para cambiar la duración media pero no la desviación típica. Para contrastar si esta variante mejora el producto original se probó en 9 pacientes y se obtuvieron las siguientes duraciones: 36.72, 35.71, 37.12, 36.49, 36.81, 35.90,37.48, 37.19 y 36.66 horas. ¿Respaldan estos datos un cambio en la duración media de la variante del producto?</p>
+<p>Consideremos las siguientes hipótesis:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: no hay cambio, es decir <span class="math inline">\(\mu\)</span> = <span class="math inline">\(\mu_0\)</span> = 36</li>
+<li><span class="math inline">\(H_1\)</span> sí́ hay cambio en la duración media <span class="math inline">\(\mu\)</span> <span class="math inline">\(\neq\)</span> 36</li>
+</ul>
+<p>Como no estamos suponiendo que la media <span class="math inline">\(\mu\)</span> de la variante es mayor o menor que la media del original <span class="math inline">\(\mu_0\)</span>, es un contraste bilateral.</p>
+<p>Calculamos con Excel© el intervalo de confianza para <span class="math inline">\(\mu\)</span> al 95% con los datos de la muestra (Análisis de datos &gt; Estadística descriptiva &gt; Activar Nivel de confianza para la media)</p>
+<p><img src="img/4.5.1_ic.png" width="437" /></p>
+<p>Así, el intervalo de confianza al 95% viene dado por (36,23 , 37,12) y la media <span class="math inline">\(\mu\)</span> = 36 queda en la zona de rechazo (valor p &lt; 0,05). Si <span class="math inline">\(H_0\)</span> es cierta, hay una probabilidad del 95% de que la media <span class="math inline">\(\mu\)</span> = 36 pertenezca a ese intervalo.</p>
+<p><img src="img/4.5.1_graph.png" width="416" /></p>
+<p>De este modo, <span class="math inline">\(\mu\)</span> = 36 es un valor muy improbable si suponemos que la hipótesis <span class="math inline">\(H_0\)</span> es cierta por lo que rechazamos la hipótesis nula y concluimos que la muestra respalda que la variante del producto tiene una duración media distinta de la del producto original.</p>
+<p>El sencillo ejemplo anterior ilustra el procedimiento general para contrastes de hipótesis. Una vez establecida la hipótesis nula <span class="math inline">\(H_0\)</span> elegimos una medida D de la discrepancia entre los datos muestrales y la hipótesis <span class="math inline">\(H_0\)</span>. Esta medida se denomina <strong>estadístico de contraste</strong> y es una variable aleatoria que es función de la muestra con distribución conocida cuando <span class="math inline">\(H_0\)</span> es cierta. Los valores del estadístico de contraste correspondientes a discrepancias grandes (valor p &lt; 0.05) llevan a rechazar <span class="math inline">\(H_0\)</span> y forman la llamada <strong>región de rechazo</strong>. El conjunto complementario de valores se conoce como <strong>región de aceptación</strong>.</p>
+</div>
+<div id="nivel-de-confianza-y-potencia-estadística" class="section level3" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> Nivel de confianza y potencia estadística</h3>
+<p>Vamos a visualizar los valores <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span>, los errores asociados y el nivel de confianza (1 - <span class="math inline">\(\alpha\)</span>) y la potencia estadística (1 - $).</p>
+<p>En la imagen vemos un contraste de hipótesis unilateral para la media poblacional <span class="math inline">\(\mu\)</span> a partir de los datos de una muestra de media <span class="math inline">\(\overline{x}\)</span>.</p>
+<p>Suponemos que la distribución de datos es normal y tenemos la curva asociada a la distribución muestral (<span class="math inline">\(\overline{x}\)</span>)en azul y a la poblacional (<span class="math inline">\(\mu\)</span>) en negro con el valor crítico para una significación <span class="math inline">\(\alpha\)</span> (nivel de confianza 1 - <span class="math inline">\(\alpha\)</span>).</p>
+<p><img src="img/4.5.2_alfabeta.png" width="611" /></p>
+<p>Una vez fijado el nivel de significación <span class="math inline">\(\alpha\)</span> (color verde oscuro) que es la probabilidad de cometer un Error de tipo I (rechazar <span class="math inline">\(H_0\)</span> cuando <span class="math inline">\(H_0\)</span> es cierta), el valor crítico asociado a <span class="math inline">\(\alpha\)</span> determina el valor de <span class="math inline">\(\beta\)</span> (color rojo), es decir, la probabilidad de cometer un error de tipo II (aceptar <span class="math inline">\(H_0\)</span> cuando <span class="math inline">\(H_0\)</span> es falsa).</p>
+<p>El error tipo II depende del parámetro <span class="math inline">\(\mu\)</span>. Cuanto más cerca se encuentre éste del valor supuesto bajo la hipótesis nula, mayor es la probabilidad de ocurrencia del error tipo II. Debido a que el verdadero valor de <span class="math inline">\(\mu\)</span> es desconocido al hacer la presunción de la hipótesis alternativa, la probabilidad del error tipo II, en contraste con el error tipo I , no se puede calcular.</p>
+<p>Para cada contraste de hipótesis que analicemos veremos el estadístico concreto con el que se mide la discrepancia entre la muestra observada y la hipótesis nula, y la correspondiente región de rechazo. Estos contrastes garantizan que la probabilidad de error tipo I sea a lo sumo <span class="math inline">\(\alpha\)</span> y que la probabilidad de rechazar <span class="math inline">\(H_0\)</span> cuando <span class="math inline">\(H_0\)</span> es falsa, es decir la potencia, sea máxima con lo que la probabilidad de error tipo II va a ser mínima.</p>
+<p>Así pues, el procedimiento de un contraste de hipótesis consiste en:</p>
+<ol style="list-style-type: decimal">
+<li><p>Formular adecuadamente la hipótesis nula <span class="math inline">\(H_0\)</span> y la hipóteis alternativa <span class="math inline">\(H_1\)</span>.</p></li>
+<li><p>Elegir un nivel de significación α y un tamaño muestral n.</p></li>
+<li><p>Buscar el estadístico de contraste óptimo.</p></li>
+<li><p>Determinar la región de rechazo.</p></li>
+<li><p>Calcular el valor del estadístico de contraste elegido en la muestra concreta.</p></li>
+<li><p>Comprobar el valor del estadístico de contraste está en la zona de rechazo o no.</p></li>
+</ol>
+<p>Otra forma de realizar el contraste de hipótesis consiste en calcular el nivel de significación crítico o valor p, es decir, la probabilidad de obtener una discrepancia mayor o igual que la observada en la muestra cuando <span class="math inline">\(H_0\)</span> es cierta.</p>
+</div>
+<div id="tamaño-de-la-muestra" class="section level3" number="4.5.3">
+<h3><span class="header-section-number">4.5.3</span> Tamaño de la muestra</h3>
+<p>No hay que confundir un contraste de hipótesis con una demostración matemática ya que el resultado de un contraste de hipótesis es una decisión razonable a partir de los datos de una muestra que debe relativizarse. Hay que tener muy en cuenta que los contrastes de hipótesis tienden a aportar resultados no significativos cuando se aplican a muestras de pequeño tamaño. Por contra, con muestras muy numerosas se pueden obtener resultados significativos por pequeñas evidencias contra <span class="math inline">\(H_0\)</span>.</p>
+<p>Así el tamaño muestral es de gran importancia a la hora de efectuar un contraste de hipótesis. Las muestras pequeñas están sometidas a una gran variabilidad. De este modo, la mayor parte de las circunstancias teóricamente posibles pueden ocurrir con una probabilidad aceptable. Por otro lado, las muestras grandes presentan un comportamiento muy regular. Así, cualquier pequeña desviación respecto al valor medio teórico correspondiente a <span class="math inline">\(H_0\)</span> puede hacer que se rechaze la hipótesis nula.</p>
+<p>El cálculo del tamaño de la muestra depende del nivel de significación <span class="math inline">\(\alpha\)</span>, la potencia deseada de la prueba 1 - <span class="math inline">\(\beta\)</span>, la variabilidad del resultado y el tamaño del efecto.</p>
+<p>El <strong>tamaño del efecto</strong> es la diferencia en el parámetro de interés que representa una diferencia clínicamente significativa. Al igual que el margen de error en las aplicaciones de intervalo de confianza, el tamaño del efecto se determina en función de criterios clínicos o prácticos y no de criterios estadísticos.</p>
+<p>Lectura recomendada: <a href="https://www.fisterra.com/formacion/metodologia-investigacion/determinacion-tamano-muestral/" class="uri">https://www.fisterra.com/formacion/metodologia-investigacion/determinacion-tamano-muestral/</a></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="estimación-de-parámetros.-intervalos-de-confianza.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="contrastes-paramétricos-y-no-paramétricos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/1fjmanzano/bioestadistica/edit/master/04-inferencia.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/1fjmanzano/bioestadistica/blob/master/04-inferencia.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
